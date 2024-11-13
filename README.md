@@ -1,6 +1,6 @@
 # Pg Realtime
 
-This is a basic realtime client for PostgresQL, built on top of the pg library, it uses the `LISTEN` and `NOTIFY` features of Postgres to surface database events to channels provided by the client.
+This is a basic pub/sub library PostgresQL allowing you to create your own realtime service, built on top of the pg library, it uses the `LISTEN` and `NOTIFY` features of Postgres to surface database events to channels provided by the client.
 
 ## Getting started
 
