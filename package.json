@@ -1,6 +1,6 @@
 {
   "name": "pg-realtime",
-  "version": "1.0.1",
+  "version": "1.0.3",
   "description": "A realtime client for PostgreSQL, built on the pg library.",
   "main": "dist/index.js",
   "module": "dist/index.mjs",
