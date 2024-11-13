@@ -1,10 +1,14 @@
 {
   "name": "pg-realtime",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "A realtime client for PostgreSQL, built on the pg library.",
   "main": "dist/index.js",
   "module": "dist/index.mjs",
   "types": "dist/index.d.ts",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/BenjaminBelchie/pg-realtime"
+  },
   "scripts": {
     "build": "tsup index.ts --format cjs,esm --dts",
     "start": "ts-node index.ts"
