@@ -1,0 +1,31 @@
+{
+  "name": "pg-realtime",
+  "version": "1.0.0",
+  "description": "A realtime client for PostgreSQL, built on the pg library.",
+  "main": "dist/index.js",
+  "module": "dist/index.mjs",
+  "types": "dist/index.d.ts",
+  "scripts": {
+    "build": "tsup index.ts --format cjs,esm --dts",
+    "start": "ts-node index.ts"
+  },
+  "keywords": [],
+  "author": "Ben Belcher",
+  "dependencies": {
+    "pg": "^8.11.3",
+    "tslog": "^4.9.3"
+  },
+  "devDependencies": {
+    "@types/eslint": "^8.56.5",
+    "@types/node": "^20.11.29",
+    "@types/pg": "^8.11.3",
+    "@typescript-eslint/eslint-plugin": "^7.3.1",
+    "@typescript-eslint/parser": "^7.3.1",
+    "eslint": "^8.57.0",
+    "prettier": "^3.2.5",
+    "ts-node": "^10.9.2",
+    "tsconfig-paths": "^4.2.0",
+    "tsup": "^8.0.2",
+    "typescript": "^5.4.2"
+  }
+}

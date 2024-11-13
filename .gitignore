@@ -1,0 +1,12 @@
+.scannerwork
+
+# Coverage directory used by tools like istanbul
+coverage
+
+# Build artifacts
+dist
+
+# Environment variables
+.env
+
+node_modules
