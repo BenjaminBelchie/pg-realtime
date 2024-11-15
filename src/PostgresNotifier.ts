@@ -31,7 +31,9 @@ class PostgresNotifier {
 
     try {
       await this.client.query(`LISTEN ${this.channelName}`);
-      this.logger.info(`Listening for notifications on channel: ${this.channelName}`);
+      this.logger.info(
+        `Listening for notifications on channel: ${this.channelName}`
+      );
 
       this.client.on("notification", (msg) => {
         const payload = msg.payload;
@@ -39,7 +41,6 @@ class PostgresNotifier {
           callback(payload);
         }
       });
-
     } catch (error) {
       this.logger.error("Error listening for notifications:", error);
     }
@@ -49,7 +50,9 @@ class PostgresNotifier {
     const client: PoolClient = await this.pool.connect();
 
     try {
-      this.logger.info(`Notifying ${this.channelName} with payload: ${payload}`);
+      this.logger.info(
+        `Notifying ${this.channelName} with payload: ${payload}`
+      );
       await client.query(`NOTIFY ${this.channelName}, '${payload}'`);
     } catch (error) {
       this.logger.error("Notification error:", error);

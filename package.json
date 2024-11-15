@@ -1,7 +1,7 @@
 {
   "name": "pg-realtime",
   "version": "1.0.3",
-  "description": "A realtime client for PostgreSQL, built on the pg library.",
+  "description": "A pub/sub client for PostgreSQL, allowing you to listen to database changes in real-time.",
   "main": "dist/index.js",
   "module": "dist/index.mjs",
   "types": "dist/index.d.ts",
