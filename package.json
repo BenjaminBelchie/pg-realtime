@@ -1,6 +1,6 @@
 {
   "name": "pg-realtime",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "A pub/sub client for PostgreSQL, allowing you to listen to database changes in real-time.",
   "main": "dist/index.js",
   "module": "dist/index.mjs",
