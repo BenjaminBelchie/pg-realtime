@@ -1,14 +1,18 @@
-import { Pool, type PoolClient } from "pg";
+import { Pool, type PoolConfig, type PoolClient } from "pg";
 import { type ILogObj, Logger } from "tslog";
 
 class PostgresNotifier {
-  private connectionString: string;
+  private readonly connectionString: string;
   private channelName: string | undefined;
-  private pool: Pool;
+  private readonly pool: Pool;
   private client: PoolClient | undefined;
-  private logger: Logger<ILogObj>;
+  private readonly logger: Logger<ILogObj>;
 
-  constructor(connectionString: string) {
+  constructor(poolConfig: PoolConfig) {
+    const { connectionString } = poolConfig;
+    if (!connectionString) {
+      throw new Error("Connection string is required for PostgresNotifier.");
+    }
     this.connectionString = connectionString;
     this.logger = new Logger({
       hideLogPositionForProduction: true,
@@ -16,6 +20,7 @@ class PostgresNotifier {
     });
     this.pool = new Pool({
       connectionString: this.connectionString,
+      ...poolConfig,
     });
   }
 
