@@ -1,6 +1,6 @@
 {
   "name": "pg-realtime",
-  "version": "1.0.5",
+  "version": "1.0.6",
   "description": "A pub/sub client for PostgreSQL, allowing you to listen to database changes in real-time.",
   "main": "dist/index.js",
   "module": "dist/index.mjs",
@@ -17,7 +17,7 @@
   "author": "Ben Belcher",
   "dependencies": {
     "pg": "^8.11.3",
-    "tslog": "^4.9.3"
+    "pino": "^9.7.0"
   },
   "devDependencies": {
     "@types/eslint": "^8.56.5",
@@ -30,6 +30,7 @@
     "ts-node": "^10.9.2",
     "tsconfig-paths": "^4.2.0",
     "tsup": "^8.0.2",
-    "typescript": "^5.4.2"
+    "typescript": "^5.4.2",
+    "pino-pretty": "^13.1.1"
   }
 }

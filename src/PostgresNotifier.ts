@@ -1,12 +1,13 @@
 import { Pool, type PoolConfig, type PoolClient } from "pg";
-import { type ILogObj, Logger } from "tslog";
+import { type Logger } from "pino";
+import { createChildLogger } from "./logger";
 
 class PostgresNotifier {
   private readonly connectionString: string;
   private channelName: string | undefined;
   private readonly pool: Pool;
   private client: PoolClient | undefined;
-  private readonly logger: Logger<ILogObj>;
+  private readonly logger: Logger;
 
   constructor(poolConfig: PoolConfig) {
     const { connectionString } = poolConfig;
@@ -14,10 +15,7 @@ class PostgresNotifier {
       throw new Error("Connection string is required for PostgresNotifier.");
     }
     this.connectionString = connectionString;
-    this.logger = new Logger({
-      hideLogPositionForProduction: true,
-      prefix: ["pg-realtime"],
-    });
+    this.logger = createChildLogger({ component: "PostgresNotifier" });
     this.pool = new Pool({
       connectionString: this.connectionString,
       ...poolConfig,
