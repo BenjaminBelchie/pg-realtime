@@ -27,7 +27,7 @@ const loggerConfigs: Record<string, LoggerConfig> = {
     },
     timestamp: pino.stdTimeFunctions.isoTime,
     base: {
-      service: "retrospect-server",
+      service: "pg-realtime",
     },
   },
 
@@ -52,9 +52,9 @@ const loggerConfigs: Record<string, LoggerConfig> = {
     },
     timestamp: pino.stdTimeFunctions.isoTime,
     base: {
-      service: "retrospect-server",
+      service: "pg-realtime",
       environment: "production",
-      version: process.env.npm_package_version ?? "unknown",
+      version: "1.0.8",
     },
   },
 
@@ -65,9 +65,9 @@ const loggerConfigs: Record<string, LoggerConfig> = {
     },
     timestamp: pino.stdTimeFunctions.isoTime,
     base: {
-      service: "retrospect-server",
+      service: "pg-realtime",
       environment: "staging",
-      version: process.env.npm_package_version ?? "unknown",
+      version: "1.0.8",
     },
   },
 };
