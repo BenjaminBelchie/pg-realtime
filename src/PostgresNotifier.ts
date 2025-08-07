@@ -34,7 +34,7 @@ class PostgresNotifier {
 
     try {
       await this.client.query(`LISTEN ${this.channelName}`);
-      this.logger.info(
+      this.logger.debug(
         `Listening for notifications on channel: ${this.channelName}`
       );
 
@@ -53,7 +53,7 @@ class PostgresNotifier {
     const client: PoolClient = await this.pool.connect();
 
     try {
-      this.logger.info(
+      this.logger.debug(
         `Notifying ${this.channelName} with payload: ${payload}`
       );
       await client.query(`NOTIFY ${this.channelName}, '${payload}'`);
